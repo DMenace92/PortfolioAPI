@@ -12,13 +12,13 @@ Router.post('/send-email', (req, res) => {
 
     //testing working
     var transporter = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
+        // host: "sandbox.smtp.mailtrap.io",
+        host: 'live.smtp.mailtrap.io',
         port: 2525,
         auth: {
             user: hiddenUsr,
             pass: hiddenPass
-            // user: "e532262e2dd080",
-            // pass: "84f7faec35f1f9"
+
         }
     });
     //for live web site
