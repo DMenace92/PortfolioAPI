@@ -1,7 +1,13 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const Router = new express.Router();
-const { hiddenUsr, hiddenPass } = require('../.env')
+// const { hiddenUsr, hiddenPass } = require('')
+// const hiddenUsr = process.env.hiddenUsr
+// const hiddenPass = process.env.hiddenPass
+require('dotenv').config()
+const hiddenUsr = process.env.HIDDENUSR;
+const hiddenPass = process.env.HIDDENPASS;
+
 
 //https://mailtrap.io/inboxes
 
@@ -12,8 +18,8 @@ Router.post('/send-email', (req, res) => {
 
     //testing working
     var transporter = nodemailer.createTransport({
-        // host: "sandbox.smtp.mailtrap.io",
-        host: 'live.smtp.mailtrap.io',
+        host: "sandbox.smtp.mailtrap.io",
+        // host: 'live.smtp.mailtrap.io',
         port: 2525,
         auth: {
             user: hiddenUsr,
