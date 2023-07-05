@@ -18,7 +18,7 @@ Router.post('/send-email', (req, res) => {
 
     //testing working
     var transporter = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
+        host: process.env.STMP_HOST,
         // host: 'live.smtp.mailtrap.io',
         port: 2525,
         // port: 587,
