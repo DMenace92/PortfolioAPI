@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const emailer = require('./routes/EmailGenerator');
-const pizzaRouter = require('./routes/InterviewQuestion/pizzaApp')
+// const pizzaRouter = require('./routes/InterviewQuestion/pizzaApp')
 // const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const cors = require('cors')
-require("./config/db")
+// require("./config/db")
 
 
 
@@ -14,7 +14,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(emailer);
-app.use(pizzaRouter)
+// app.use(pizzaRouter)
 
 // const bodyParser = require('body-parser');
 

@@ -17,26 +17,26 @@ Router.post('/send-email', (req, res) => {
 
 
     //testing working
-    var transporter = nodemailer.createTransport({
-        host: process.env.STMP_HOST,
-        // host: 'live.smtp.mailtrap.io',
-        port: 2525,
-        // port: 587,
-        auth: {
-            user: hiddenUsr,
-            pass: hiddenPass
-
-        }
-    });
-    //for live web site
     // var transporter = nodemailer.createTransport({
-    //     host: "live.smtp.mailtrap.io",
-    //     port: 587,
+    //     host: process.env.STMP_HOST,
+    //     // host: 'live.smtp.mailtrap.io',
+    //     port: 2525,
+    //     // port: 587,
     //     auth: {
-    //       user: "api",
-    //       pass: "fe93148676f15376e0a33ebda0a277e9"
+    //         user: hiddenUsr,
+    //         pass: hiddenPass
+
     //     }
-    //   });
+    // });
+    //for live web site
+    var transporter = nodemailer.createTransport({
+        host: "live.smtp.mailtrap.io",
+        port: 587,
+        auth: {
+          user: "api",
+          pass: "fe93148676f15376e0a33ebda0a277e9"
+        }
+      });
     const mailOptions = {
         from: email,
         to: "enwiya.dev@gmail.com",
