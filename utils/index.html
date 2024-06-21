@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #607b98;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            gap:30px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            
+        }
+        .compName{
+            font-size: 25px;
+        }
+        .imagePlacement{
+            border-radius: 180px;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="imagePlacement" src="https://live.staticflickr.com/65535/53725069785_73652e0466_s.jpg" alt="logo with inital of de" />
+            <h1 class="compName"><span>Enwiya Software Solutions LLC.</span></h1>
+        </div>
+        <div class="content">
+            <p><span id="message">Message</span></p>
+            <p>Phone Number: <span id="phoneNumber">PhoneNumber</span></p>
+            <!-- <p><a href="https://www.dennisenwiya.dev">dennisenwiya.dev</a></p> -->
+            <p>Sent from: <span id="other"> Email</span></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Dennis Enwiya</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to set the custom name
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const message = urlParams.get('message') || "Message"; // Assuming custom name is passed as a query parameter
+        const phoneNumber = urlParams.get('phoneNumber'|| "PhoneNumber");
+        const other = urlParams.get("other"||"Email"); // Assuming custom name is passed as a query parameter
+
+        
+        // document.getElementById('customName1').textContent = customName;
+        document.getElementById('Message').textContent = message;
+        document.getElementById('PhoneNumber').textContent = phoneNumber;
+        document.getElementById('other').textContent = other;
+
+    </script>
+</body>
+</html>
