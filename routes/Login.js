@@ -32,16 +32,16 @@ Router.post("/admin/logout", auth, async (req, res) => {
   }
 });
 
-// Router.post("/admin/register", async (req, res) => {
-//   const user = new User(req.body);
+Router.post("/admin/register", async (req, res) => {
+  const user = new User(req.body);
 
-//   try {
-//     await user.save();
-//     const token = user.generateAuthToken();
-//     res.status(201).send({ user, token });
-//   } catch (e) {
-//     res.status(400).send(e);
-//   }
-// });
+  try {
+    await user.save();
+    const token = user.generateAuthToken();
+    res.status(201).send({ user, token });
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
 
 module.exports = Router;

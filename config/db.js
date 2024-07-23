@@ -4,7 +4,7 @@ const config = require("../config/config");
 let newConfig = config;
 
 mongoose.connect(newConfig, {
-  // useNewUrlParser: true,
+  useNewUrlParser: true,
   // useCreateIndex: true,
   // useFindAndModify: false,
   // useUnifiedTopology: true,

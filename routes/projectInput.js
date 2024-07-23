@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     // Set the filename to be the original name with a timestamp
-    cb(null, `${Date.now()}-${file.originalname}`);
+    cb(null, file.originalname);
   },
 });
 
@@ -27,7 +27,7 @@ Router.post("/create_image", upload.single("file"), async (req, res) => {
   }
 });
 
-Router.post("/create_project", auth, async (req, res) => {
+Router.post("/create_project", async (req, res) => {
   console.log(req.body);
   const project = new Project({
     title: req.body.title,
