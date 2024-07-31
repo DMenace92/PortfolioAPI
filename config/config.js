@@ -7,8 +7,7 @@ const express = require("express");
 
 //local server
 
-let config =
-  "mongodb+srv://dennisenwiya:hYza3YLhvkA0NJKt@cluster0.593mvi9.mongodb.net/profileAPI";
+let config = process.env.MONGO_URL;
 let tConfig = "profileAPI";
 
 (module.exports = config), tConfig;
